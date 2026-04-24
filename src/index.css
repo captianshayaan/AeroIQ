@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, sans-serif;
+  background-color: #05070d;
+  --page-bg: #05070d;
+  --panel-bg: rgba(5, 8, 16, 0.42);
+  --panel-strong: rgba(7, 12, 22, 0.68);
+  --line-soft: rgba(186, 211, 255, 0.13);
+  --line-strong: rgba(186, 211, 255, 0.24);
+  --text-main: #ffffff;
+  --text-subtle: #94a3b8;
+  --accent: #3b82f6;
+  --accent-strong: #2563eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: #05070d;
+  color: var(--text-main);
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(59, 130, 246, 0.26);
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.page-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 7, 13, 0.82) 0%, rgba(5, 7, 13, 0.28) 42%, rgba(5, 7, 13, 0.08) 100%),
+    linear-gradient(180deg, rgba(5, 7, 13, 0.42) 0%, rgba(5, 7, 13, 0.04) 42%, rgba(5, 7, 13, 0.54) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.globe-page > header,
+.globe-page > main,
+.globe-page > footer {
+  position: relative;
+  z-index: 2;
+}
+
+.globe-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.globe-scene canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.panel-glass {
+  background: linear-gradient(180deg, rgba(7, 12, 22, 0.5), rgba(7, 12, 22, 0.28));
+  border: 1px solid var(--line-soft);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 28px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.soft-ring {
+  box-shadow:
+    0 0 0 1px rgba(148, 163, 184, 0.14),
+    0 24px 60px rgba(2, 6, 23, 0.36);
+}
+
+.button-glow {
+  box-shadow:
+    0 10px 30px rgba(59, 130, 246, 0.24),
+    0 0 28px rgba(59, 130, 246, 0.12);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4) 0 0.5px, transparent 0.7px),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.35) 0 0.5px, transparent 0.8px),
+    radial-gradient(circle at 35% 80%, rgba(255, 255, 255, 0.3) 0 0.5px, transparent 0.75px);
+  background-size: 180px 180px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.34);
+}
